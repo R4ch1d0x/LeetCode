@@ -1,8 +1,11 @@
 class Solution:
     def mySqrt(self, x: int) -> int:
-        for i in range(1,2**31):
-            if i*i > x:
-                return i-1
-            elif i*i == x:
-                return i
+        if x < 2:
+            return x
+        
+        i = 2
+        while i * i <= x:
+            i += 1
+        
+        return i - 1
         
